@@ -1,0 +1,89 @@
+Step: step-credential-initializer-8flkd:
+
+{"level":"warn","ts":1565636444.3804162,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565636444.3807135,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-d6lbz:
+
+{"level":"warn","ts":1565636444.8761232,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565636444.877347,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/demo-2\""}
+Step: step-place-tools:
+
+Step: step-git-source-**********-demo-2-master-releas-wrlpx:
+
+{"level":"warn","ts":1565636453.1505141,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565636453.4223824,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/**********/demo-2.git @ v0.0.2 in path /workspace/source"}
+Step: step-git-merge:
+
+WARNING: no SHAs to merge, falling back to initial cloned commit
+Step: step-setup-**-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image php:7.0-apache        
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:b4e5b78afa2504589f3a9868535e2b099418c9de14711574b09691fc3e0f0054: no such file or directory 
+[36mINFO[0m[0000] Downloading base image php:7.0-apache        
+[36mINFO[0m[0000] Using files from context: [/workspace/source/src] 
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 80/tcp                  
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] Using files from context: [/workspace/source/src] 
+[36mINFO[0m[0000] COPY src/ /var/www/html                      
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0000] EXPOSE 80                                    
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 80/tcp                  
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+2019/08/12 19:00:57 existing blob: sha256:f76e300fbe727910ee01d0011a0d011f7cffe00483aea448496dbe49029aa8ad
+2019/08/12 19:00:57 existing blob: sha256:d9f072d61771f0bc903b453eca2aa1816ee9aaae195e7be586492a38619c45ce
+2019/08/12 19:00:57 existing blob: sha256:f1548c2cd3762f0550634038ffb2e4e15a342ff40861121b4236ddc58b768c54
+2019/08/12 19:00:57 existing blob: sha256:177e7ef0df6987e0c5738a1fb5aba98b6b6e7a5fef992e481977dbb5ba3f91be
+2019/08/12 19:00:57 existing blob: sha256:e1062fd0605a7573b74b18dc834091cbb94662b46863858735775181fd01b55c
+2019/08/12 19:00:57 existing blob: sha256:c0421d5b63d69a2ae480d7c5caa3d21f8105a682249c55f4923f655e73e2f492
+2019/08/12 19:00:57 existing blob: sha256:8ba923990f244d0ec64c6b247dc8bc9de707da22c6baca8750767ba674b33ff4
+2019/08/12 19:00:57 existing blob: sha256:af9ff1b9ce5b028cb1a7c3ad2bc442aacb9a8ddd46cb8a41485b947536e3f4f6
+2019/08/12 19:00:57 existing blob: sha256:a8a33d96b4e7acb10a1e637ccc316d5e823debfa5c64704b4935af982bd79926
+2019/08/12 19:00:57 existing blob: sha256:98af8902979aea4195030c6189edac2a470abcdd834648808b0f95bc90a1d0f0
+2019/08/12 19:00:57 existing blob: sha256:9bf89f2eda244c750e106e9751aa6714e8002accc9ebc4efe784800ff424e2a8
+2019/08/12 19:00:57 existing blob: sha256:37007e29219807979c0fc57591ff103c795c0c60438a29b6ca8c6ad79b70058e
+2019/08/12 19:00:57 existing blob: sha256:350207dcf1b7e69d73ee5e688ec3f1bb6576481773105b8635193dc7fe5010bb
+2019/08/12 19:00:57 pushed blob: sha256:0b46b45c9d3756579b69e4c0e4dcc5276847ec1cea9b1dc45b1acd2b2bee96d4
+2019/08/12 19:00:57 pushed blob: sha256:d10b841bd5cc271a70804ce384c1fae5077f68585c9ae5bfecba6088799fa059
+2019/08/12 19:00:57 141854384972.dkr.ecr.us-east-1.amazonaws.com/**********/demo-2:0.0.2: digest: sha256:e6724dd92158a406e517e9fe634f6dca2c28e4b9b0996cb40e81fdaebf82fefe size: 2532
+Step: step-build-post-build:
+
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+Step: step-promote-changelog:
+
+Converted /workspace/source/charts/demo-2 to an unshallow repository
+Generating change log from git ref 04d69b1eb60120e7c2b1e5127cfd5a0665b6fbe9 => df666fc709a209ada68de18416aaa489db3fde45
+Associating user x-0 in users.jenkins.io with email mark.x.vermeulen.-nd@disney.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit a4fa980d30ecbeb57691a02b8549e7f3c263457c with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for **********/demo-2 and tag v0.0.2 so creating a new release
+Updated the release information at https://github.com/**********/demo-2/releases/tag/v0.0.2
+generated: /workspace/source/charts/demo-2/templates/release.yaml
+Created Release demo-2-0-0-2 resource in namespace **
+Updating PipelineActivity **********-demo-2-master-2 with version 0.0.2
+Updated PipelineActivities **********-demo-2-master-2 with release notes URL: https://github.com/**********/demo-2/releases/tag/v0.0.2
+Step: step-promote-helm-release:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file demo-2-0.0.2.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: step-promote-**-promote:
+
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app demo-2 version 0.0.2 to namespace **-staging
+Created Pull Request: https://github.com/**********/environment-sre-eks-**-poc-staging/pull/1
+Added label  to Pull Request https://github.com/**********/environment-sre-eks-**-poc-staging/pull/1
+Pull Request https://github.com/**********/environment-sre-eks-**-poc-staging/pull/1 is merged at sha 705816848b758cda2b977efb52bd38dc7fd0ca9a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names demo-2, **-demo-2, **-staging-demo-2
