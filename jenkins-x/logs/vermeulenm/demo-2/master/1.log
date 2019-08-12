@@ -1,0 +1,46 @@
+Step: step-credential-initializer-9tqcq:
+
+{"level":"warn","ts":1565635190.5112054,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565635190.5118184,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-kz66w:
+
+{"level":"warn","ts":1565635192.037041,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565635192.0377927,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/demo-2\""}
+Step: step-place-tools:
+
+Step: step-git-source-**********-demo-2-master-kx6bk:
+
+{"level":"warn","ts":1565635202.9743345,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565635204.6822855,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/**********/demo-2.git @ v0.0.1 in path /workspace/source"}
+Step: step-git-merge:
+
+WARNING: no SHAs to merge, falling back to initial cloned commit
+Step: step-setup-**-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image php:7.0-apache        
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:b4e5b78afa2504589f3a9868535e2b099418c9de14711574b09691fc3e0f0054: no such file or directory 
+[36mINFO[0m[0000] Downloading base image php:7.0-apache        
+[36mINFO[0m[0000] Using files from context: [/workspace/source/src] 
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 80/tcp                  
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] Using files from context: [/workspace/source/src] 
+[36mINFO[0m[0000] COPY src/ /var/www/html                      
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0000] EXPOSE 80                                    
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 80/tcp                  
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+error pushing image: failed to push to destination 141854384972.dkr.ecr.us-east-1.amazonaws.com/**********/demo-2:0.0.1: DENIED: User: arn:aws:sts::141854384972:assumed-role/sre-eks-**-poc-worker-nodes-NodeInstanceRole-6ST14RT9MYF9/i-0602ffce1aa9dc631 is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:us-east-1:141854384972:repository/**********/demo-2
+Step: step-build-post-build:
+
+Step: step-promote-changelog:
+
+Step: step-promote-helm-release:
+
+Step: step-promote-**-promote:
+
